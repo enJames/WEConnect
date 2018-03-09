@@ -4,7 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build-css",
+    "build-css": "node-sass -r --output-style nested --indent-type space --space-width 4 template/scss/ -o template/static-files/css",
+    "autoprefixer": "postcss -u autoprefixer -r static-files/css"
+
   },
   "repository": {
     "type": "git",
