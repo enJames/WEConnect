@@ -1,0 +1,21 @@
+.business-list {
+    margin-bottom: 40px;
+    .business-list-title {
+        margin: 20px auto 30px auto;
+    }
+    .business {
+        background-color: #C5CAE923;
+        margin-bottom: 20px;
+        padding: 3%;
+        border-radius: 5px;
+        box-shadow: 2px 2px 20px -3px;
+        a {
+            color: rgb(0,10,40);
+        }
+        p {
+            margin: 0 auto 5px auto;
+        }
+        
+        }
+    }
+}
