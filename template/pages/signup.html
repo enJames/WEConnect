@@ -35,7 +35,58 @@
                 </ul>
             </div>
         </nav>
-        
+        <div class="container">
+            <div class="description">
+                <h1>Lorem and Lorem</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Already have an account? <a href="#"><strong style="color: rgb(0,10,40);">Login</strong></a> instead</p>
+            </div>
+            <form class="my-form" method="POST text-center">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="firstName">First Name</label>
+                            <input class="form-control" type="text" id="firstName" placeholder="e.g John">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lastName">Last Name</label>
+                            <input class="form-control" type="text" id="lastName" placeholder="e.g Doe">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="email">Email</label>
+                            <input class="form-control" type="email" id="email" placeholder="e.g mail@example.com">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="gender">Gender</label>
+                            <select class="form-control" id="gender">
+                                <option selected disabled hidden class="select-opt">--Select--</option>
+                                <option>Female</option>
+                                <option>Male</option>
+                                <option>Others</option>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="password">Password</label>
+                            <input class="form-control" type="password" id="password" min="6" placeholder="Minimum of 6 characters">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="repassword">Retype password</label>
+                            <input class="form-control" type="password" id="repassword" placeholder="Enter password again">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" name="submit" class="wc-btn">Sign Up</button>
+                </div>
+            </form>
+        </div>
         <footer>
             <div class="container-fluid">
                 <div class="footer-wrapper form-inline">
