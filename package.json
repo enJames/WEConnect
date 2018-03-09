@@ -1,0 +1,22 @@
+{
+  "name": "weconnect",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enJames/WEConnect.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enJames/WEConnect/issues"
+  },
+  "homepage": "https://github.com/enJames/WEConnect#readme",
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
+}
