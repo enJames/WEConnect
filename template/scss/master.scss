@@ -1,0 +1,250 @@
+@import 'partials/variables';
+@import 'partials/normalise';
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+body {
+    background-color: #E8EAF6;
+}
+/* custom nav styling */
+.custom-color {
+    background-color: rgb(0,10,40);
+}
+
+.white-font {
+    color: white!important;
+}
+.navbar {
+    padding: 0!important;
+    ul {
+        min-height: 64px;
+        li {
+            transition: .5s ease-in-out;
+            &:hover {
+                background-color: rgba(158, 158, 158,.3);
+                border-bottom: 3px solid rgb(14,113,198);
+            }
+        }
+    }
+
+}
+.nav-link {
+    line-height: 40px;
+    padding: .5em!important;
+    color: white !important;
+    font-size: 1rem;
+}
+#navSearchLocation {
+    width: 120px !important;
+}
+.nav-wc-btn {
+    background-color: transparent;
+    min-width: 75px;
+    height: 38px;
+    color: white;
+    font-size: 1rem;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: .5s ease-in-out;
+    &:hover {
+        background-color: white;
+        color: rgb(0,20,40);
+        font-weight: bold;
+    }
+}
+.menuButton {
+    background-color: rgba(200,200,200,0.7);
+    margin-top: 10px;
+}
+.navButton-marginLeft {
+    margin: auto .7em;
+}
+
+.user {
+    div {
+        float: left;
+    }
+    .avatarDiv {
+        .avatar {
+            max-width: 50px;
+            max-height: 50px;
+            border-radius: 100000px;
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+    .username {
+        span {
+            color: white;
+        }
+    }
+}
+.dropdown-menu {
+    background-color: rgb(0,10,40);
+    right: -10px;
+    left: auto;
+
+    .dropdown-item {
+        color: white;
+        &:hover {
+            background-color: rgba(0,0,0,.4)
+        }
+    }
+}
+
+/*Body button styles */
+.wc-btn {
+    background-color: transparent;
+    min-width: 110px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: .5s ease-in-out;
+    &:hover {
+        background-color: white;
+        color: rgb(0,20,40);
+    }
+}
+
+.actionButton {
+    background-color: rgb(0,20,40);
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 3px 1px #9E9E9E;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: .5s ease-in-out;
+    &:hover {
+        background-color: rgb(0,10,30);
+    }
+}
+.select-opt {
+    font-style: italic;
+}
+
+.my-form {
+    color: rgb(0,10,40);
+    font-size: 1.3rem;
+    margin: 7% auto;
+    padding: 2% 4%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 1px #BDBDBD;
+
+    input {
+        text-indent: 10px;
+        transition: all .5s ease-in-out;
+        &:focus {
+            text-indent: 20px;
+        }
+    }
+
+    .wc-btn {
+        margin: 20px;
+        font-weight: normal;
+        border-color: rgb(0,10,40);
+        color: rgb(0,10,40);
+        &:hover {
+            background-color: rgb(0,10,40);
+            color: white;
+            border-color: white;
+        }
+    }
+}
+
+/*Image styling */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: black;
+    color: #BDBDBD;
+    .footer-wrapper {
+        padding: 5% 5px;
+        color: #9E9E9E;
+        .wc-btn {
+            border: 2px solid #9E9E9E;
+            color: #9E9E9E;
+            &:hover {
+                background-color: #9E9E9E;
+                color: rgb(0,20,40);
+            }
+        }
+    }
+}
+
+/* Margin styles */
+.my-div-styling {
+    margin: auto auto 15px auto;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: .7px .7px 1px .5px #9E9E9E;
+}
+.marginTop {
+    margin: 3% 0 0 0;
+}
+.marginBottom {
+    margin: 0 0 5px 0;
+}
+.marginRight {
+    margin: auto 10px auto auto;
+}
+
+@media screen and (max-width: 879px) {
+
+}
+
+@media screen and (max-width: 767px) {
+    .navbar-brand {
+        margin: 10px auto!important;
+    }
+    ul {
+        margin: 2% auto auto auto !important;
+    }
+    ul li {
+        margin-left: 20px!important;
+    }
+    .nav-link {
+        line-height: 40px!important;
+    }
+    form {
+        margin-top: 5px !important;
+    }
+    .user {
+        margin-left: 20px!important;
+    }
+    .dropdown-menu {
+        right: auto;
+        left: auto;
+    }
+}
+@media screen and (max-width: 576px) {
+    #navSearchLocation {
+        width: 100% !important;
+    }
+    li {
+        transition: .5s ease-in-out;
+        &:hover {
+            border: none!important;
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    .wc-btn {
+        width: 100px!important;
+        font-size: 1rem!important;
+        height: 40px!important;
+    }
+}
