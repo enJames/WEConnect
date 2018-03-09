@@ -1,0 +1,25 @@
+{
+  "name": "weconnect",
+  "version": "1.0.0",
+  "description": "WEConnect provides a platform that brings businesses and individuals together. This platform creates awareness for businesses and gives the users the ability to write reviews about the businesses they have interacted with.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build-css",
+    "build-css": "node-sass -r --output-style nested --indent-type space --space-width 4 template/scss/ -o template/static-files/css",
+    "autoprefixer": "postcss -u autoprefixer -r template/static-files/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enJames/WEConnect.git"
+  },
+  "author": "Enejo James Oche",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enJames/WEConnect/issues"
+  },
+  "homepage": "https://github.com/enJames/WEConnect#readme",
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
+}
