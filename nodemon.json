@@ -1,6 +1,5 @@
 {
     "events": {
-        "start": "babel app.js test/test.app.js --out-dir server/dist",
-        "restart": "mocha server/dist/test/test.app.js"
+        "restart": "babel app.js test/test.app.js --out-dir server/dist"
     }
 }
