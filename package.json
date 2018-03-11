@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha server/dist/test/test.app.js",
     "start": "nodemon server/dist/app.js --exec babel-node --delay 20",
-    "build": "babel app.js test/test.app.js --out-dir server/dist"
+    "build": "babel server -d ./dist --ignore server/dist",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
