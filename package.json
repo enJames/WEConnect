@@ -4,10 +4,9 @@
   "description": "WEConnect provides a platform that brings businesses and individuals together. This platform creates awareness for businesses and gives the users the ability to write reviews about the businesses they have interacted with.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build-css",
-    "build-css": "node-sass -r --output-style nested --indent-type space --space-width 4 template/scss/ -o template/static-files/css",
-    "autoprefixer": "postcss -u autoprefixer -r template/static-files/css"
+    "test": "mocha server/dist/test/test.app.js",
+    "start": "nodemon server/dist/app.js --exec babel-node --delay 20",
+    "build": "babel app.js test/test.app.js --out-dir server/dist"
   },
   "repository": {
     "type": "git",
@@ -20,6 +19,20 @@
   },
   "homepage": "https://github.com/enJames/WEConnect#readme",
   "devDependencies": {
-    "node-sass": "^4.7.2"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "mocha": "^5.0.4",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.17.1"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "express": "^4.16.2"
   }
 }

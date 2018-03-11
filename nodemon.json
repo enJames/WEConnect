@@ -1,0 +1,5 @@
+{
+    "events": {
+        "start": "babel app.js test/test.app.js --out-dir server/dist"
+    }
+}
