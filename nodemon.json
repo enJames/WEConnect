@@ -1,5 +1,5 @@
 {
     "events": {
-        "restart": "babel app.js test/test.app.js --out-dir server/dist"
+        "restart": "babel server -d ./dist"
     }
 }
