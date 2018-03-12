@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 import { assert } from 'chai';
 import greeting from '../app';
 
