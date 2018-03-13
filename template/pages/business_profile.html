@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WEConnect</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" href="/img/logo.png">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../static-files/css/animate.css">
+    	<link rel="stylesheet" type="text/css" href="../static-files/css/master.css">
+    	<link rel="stylesheet" type="text/css" href="../static-files/css/business_profile.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-toggleable-sm navbar-light bg-faded custom-color">
+            <button class="navbar-toggler navbar-toggler-right menuButton" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon white-font"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <img src="../static-files/img/logo.png" width="150" height="80" alt="logo">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="form-inline mx-auto">
+                    <input class="form-control mr-sm-2" id="navSearchBusiness" type="text" placeholder="Search a business">
+                    <input class="form-control mr-sm-1" id="navSearchLocation" type="text" placeholder="Location">
+                    <button class="nav-wc-btn" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLinkBusinesses" href="#"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Businesses
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkBusinesses">
+                            <a class="dropdown-item" href="business_profile.html">Some Company</a>
+                            <a class="dropdown-item" href="#">WEConnect</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="user form-inline dropdown text-center marginRight">
+                    <a class="dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLinkUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="avatarDiv form-inline mx-auto">
+                            <div class="avatar">
+                                <img class="img-fluid" src="../static-files/img/user/steve.png" alt="user">
+                            </div>
+                        </div>
+                        <div class="username form-inline mx-auto">
+                            <span>Steve</span>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkUser">
+                      <a class="dropdown-item" href="#">Profile</a>
+                      <a class="dropdown-item" href="#">Settings</a>
+                      <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="actionButtonsDiv">
+                <div class="form-inline actionButtonsWrapper mr-auto marginTop">
+                    <a class="marginRight" href="business_reg.html">
+                        <button class="actionButton" type="button">New</button>
+                    </a>
+                    <a href="business_profile_update.html">
+                        <button class="actionButton" type="button">Update</button>
+                    </a>
+                </div>
+            </div>
+            <div class="business-page">
+                <div class="business-details text-center my-div-styling">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="img-wrapper">
+                                <img class="img-fluid" src="../static-files/img/business/epic.jpg" alt="company logo">
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <h2>Some Company International</h2>
+                            <p class="motto">
+                                <i>Motto: <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span></i>
+                            </p>
+                            <div class="row text-center">
+                                <div class="col-lg-3">
+                                    <p class="marginBottom"><i class="fa fa-phone"></i> 01 - 471 7890</p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p class="marginBottom"><i class="fa fa-road"></i> Plot 95, somewhere close, oppsite some street, some city, some state, some country.</p>
+                                </div>
+                                <div class="col-lg-3">
+                                    <p class="marginBottom"><i class="fa fa-globe"></i> www.example.com</p>
+                                </div>
+                            </div>
+                            <div class="row marginTop">
+                                <div class="col-sm-6">
+                                    <p class="marginBottom"><span><strong>29</strong></span></p>
+                                    <p class="marginBottom"><strong>Reviews</strong></p>
+                                </div>
+                                <div class="col-sm-6 rating-div">
+                                    <p class="marginBottom"><strong>Rating: <span>4.3</span></strong></p>
+                                    <div>
+                                        <img width="60" height="10" src="../static-files/img/rating.png" alt="rating">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about my-div-styling">
+                    <h4>About</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="business-reviews my-div-styling">
+                    <div class="">
+                        <h4>Reviews</h4>
+                    </div>
+                    <br>
+                    <div class="review-div my-div-styling">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="customer-rating mx-auto text-center">
+                                    <div>
+                                        <img width="60" height="10" src="../static-files/img/rating.png" alt="rating">
+                                    </div>
+                                    <p class="marginBottom">Good</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="customer-details">
+                                    <h3>John Doe</h3>
+                                    <p class="marginBottom">CEO, Some Company</p>
+                                </div>
+                                <div class="customer-review">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-div my-div-styling">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="customer-rating mx-auto text-center">
+                                    <div>
+                                        <img width="60" height="10" src="../static-files/img/rating.png" alt="rating">
+                                    </div>
+                                    <p class="marginBottom">Very good</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="customer-details">
+                                    <h3>Doe John Doe</h3>
+                                    <p class="marginBottom">Marketing Manager, Some Company</p>
+                                </div>
+                                <div class="customer-review">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container-fluid">
+                <div class="footer-wrapper form-inline">
+                    <div class="contentEls row">
+                        <div class="col-sm-3">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                        <div class="col-sm-2">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                        </div>
+                        <div class="col-sm-3">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="subscribe ml-auto">
+                                <h6>Let's keep you updated!</h6>
+                                <form class="form-inline mx-auto">
+                                    <input class="form-control mr-sm-2" type="email" id="footer-email"placeholder="E-mail address">
+                                    <button class="nav-wc-btn" type="submit">Save</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </body>
+</html>

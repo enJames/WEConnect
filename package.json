@@ -1,0 +1,46 @@
+{
+  "name": "weconnect",
+  "version": "1.0.0",
+  "description": "WEConnect provides a platform that brings businesses and individuals together. This platform creates awareness for businesses and gives the users the ability to write reviews about the businesses they have interacted with.",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "nyc mocha server/test/test.app.js --compilers js:babel-core/register --timeout 10000",
+    "start": "nodemon server/dist/app.js --exec babel-node --delay 20",
+    "build": "babel server -d ./server/dist --ignore server/dist",
+    "postinstall": "npm run build",
+    "coverage": "babel-node istanbul cover _mocha server/test/test.app.js",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enJames/WEConnect.git"
+  },
+  "author": "Enejo James Oche",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enJames/WEConnect/issues"
+  },
+  "homepage": "https://github.com/enJames/WEConnect#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.0.4",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.17.1",
+    "nyc": "^11.4.1"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "express": "^4.16.2"
+  }
+}

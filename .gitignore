@@ -1,0 +1,5 @@
+node_modules/
+server/dist/
+.coveralls.yml
+coverage/
+template/scss/

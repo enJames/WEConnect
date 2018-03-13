@@ -1,0 +1,21 @@
+.business-list {
+  margin-bottom: 40px; }
+  .business-list .business-list-title {
+    margin: 20px auto 30px auto; }
+  .business-list .business {
+    background-color: #C5CAE923;
+    margin-bottom: 20px;
+    padding: 3%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 20px -3px; }
+    .business-list .business a {
+      color: #000a28; }
+    .business-list .business p {
+      margin: 0 auto 5px auto; }
+    .business-list .business .img-wrapper {
+      width: 100%;
+      max-height: 150px;
+      overflow: hidden; }
+      .business-list .business .img-wrapper img {
+        max-width: 100%;
+        height: auto; }

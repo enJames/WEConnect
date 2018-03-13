@@ -1,0 +1,29 @@
+.login-wrapper {
+  background-image: url("../img/bg/login.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+  .login-wrapper .login-div {
+    background-color: rgba(0, 0, 0, 0.15);
+    margin: 9% auto 7% auto;
+    padding: 15px 20px; }
+    .login-wrapper .login-div .brand {
+      padding: 4%; }
+      .login-wrapper .login-div .brand .brand-img {
+        width: 50%;
+        margin: auto; }
+        .login-wrapper .login-div .brand .brand-img img {
+          max-width: 100%;
+          height: auto; }
+    .login-wrapper .login-div .my-form {
+      color: white; }
+      .login-wrapper .login-div .my-form input {
+        height: 50px; }
+      .login-wrapper .login-div .my-form .wc-btn {
+        color: white !important;
+        border-color: white !important; }
+  .login-wrapper p {
+    color: white; }
