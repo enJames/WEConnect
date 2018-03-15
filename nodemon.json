@@ -1,5 +1,5 @@
 {
     "events": {
-        "restart": "babel server -d ./dist"
+        "restart": "babel server test -d ./dist"
     }
 }

@@ -4,11 +4,11 @@
   "description": "WEConnect provides a platform that brings businesses and individuals together. This platform creates awareness for businesses and gives the users the ability to write reviews about the businesses they have interacted with.",
   "main": "server/app.js",
   "scripts": {
-    "test": "nyc mocha server/test/test.app.js --compilers js:babel-core/register --timeout 10000",
-    "start": "nodemon server/dist/app.js --exec babel-node --delay 20",
-    "build": "babel server -d ./server/dist --ignore server/dist",
+    "test": "nyc mocha --compilers js:babel-core/register --timeout 10000",
+    "start": "nodemon dist/app.js --delay 60",
+    "build": "babel server test -d /dist --ignore /dist",
     "postinstall": "npm run build",
-    "coverage": "babel-node istanbul cover _mocha server/test/test.app.js",
+    "coverage": "babel-node istanbul cover _mocha",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "repository": {
@@ -23,9 +23,7 @@
   "homepage": "https://github.com/enJames/WEConnect#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
     "coveralls": "^3.0.0",
     "eslint": "^4.18.2",
     "eslint-config-airbnb": "^16.1.0",
