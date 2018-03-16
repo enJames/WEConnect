@@ -2,7 +2,7 @@
 
 var _chai = require('chai');
 
-var _app = require('../app');
+var _app = require('../server/app');
 
 var _app2 = _interopRequireDefault(_app);
 

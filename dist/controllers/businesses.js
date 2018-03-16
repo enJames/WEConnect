@@ -3,21 +3,30 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.updateBusinessPost = exports.deleteBusinessPost = exports.deleteBusinessGet = exports.createBusinessPost = exports.createBusinessGet = exports.businessDetails = exports.allBusinesses = undefined;
 
-var _usersData = require('../models/usersData');
+var _businessData = require('../models/businessData');
 
-var _usersData2 = _interopRequireDefault(_usersData);
+var _businessData2 = _interopRequireDefault(_businessData);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Get list of all businesses
 var allBusinesses = function allBusinesses(req, res) {
-    res.send(_usersData2.default);
+    res.json(_businessData2.default);
 };
 
 // Get details of a business
+/* jshint esversion: 6 */
 var businessDetails = function businessDetails(req, res) {
-    res.send('To be implemented: List all businesses');
+    var holdbusiness = void 0;
+    _businessData2.default.forEach(function (business) {
+        if (req.params.bussinessId === Number(business.id)) {
+            holdbusiness = business;
+        }
+    });
+    console.log(holdbusiness);
+    res.send(holdbusiness);
 };
 
 // Display create business form on GET
@@ -46,12 +55,10 @@ var updateBusinessPost = function updateBusinessPost(req, res) {
 };
 
 // exporting
-exports.default = {
-    allBusinesses: allBusinesses,
-    businessDetails: businessDetails,
-    createBusinessGet: createBusinessGet,
-    createBusinessPost: createBusinessPost,
-    deleteBusinessGet: deleteBusinessGet,
-    deleteBusinessPost: deleteBusinessPost,
-    updateBusinessPost: updateBusinessPost
-};
+exports.allBusinesses = allBusinesses;
+exports.businessDetails = businessDetails;
+exports.createBusinessGet = createBusinessGet;
+exports.createBusinessPost = createBusinessPost;
+exports.deleteBusinessGet = deleteBusinessGet;
+exports.deleteBusinessPost = deleteBusinessPost;
+exports.updateBusinessPost = updateBusinessPost;
