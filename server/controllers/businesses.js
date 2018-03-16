@@ -7,4 +7,10 @@ const allBusinesses = (req, res) => res.status(200).json({
 });
 
 // exporting
-export default allBusinesses;
+export {
+    allBusinesses,
+    businessDetails,
+    createBusiness,
+    deleteBusiness,
+    updateBusiness
+};
