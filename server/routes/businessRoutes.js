@@ -5,7 +5,7 @@ import {
     createBusiness,
     deleteBusiness,
     updateBusiness
-} from '../controllers/businesses';
+} from '../controllers/businessesController';
 
 const router = express.Router();
 
