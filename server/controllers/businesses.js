@@ -41,11 +41,38 @@ const createBusiness = (req, res) => {
     });
 };
 
+// Handle update business on PUT
+const updateBusiness = (req, res) => {
+    const { company, category, location } = req.body;
+    const updateObject = {
+        company,
+        category,
+        location
+    };
+    let theBusiness;
+    businesses.forEach((business) => {
+        if (parseInt(req.params.businessId, 10) === business.id) {
+            business = { ...business, ...updateObject };
+            theBusiness = business;
+        }
+    });
+    if (theBusiness) {
+        return res.status(200).json({
+            message: 'Business updated',
+            business: theBusiness
+        });
+    }
+    return res.status(404).json({
+        message: 'Business not found'
+    });
+};
+
+
 // exporting
 export {
     allBusinesses,
     businessDetails,
     createBusiness,
-    deleteBusiness,
-    updateBusiness
+    updateBusiness,
+    deleteBusiness
 };
