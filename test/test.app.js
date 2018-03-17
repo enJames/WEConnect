@@ -61,4 +61,25 @@ describe('Test for businesses', () => {
                 });
         });
     });
+
+    describe('when the user sends a POST request to /api/v1/businesses/', () => {
+        it('It should return a 201 status and create a new business', (done) => {
+            chai.request(app)
+                .post('/api/v1/businesses')
+                .send({
+                    company: 'Some Nigeria Limited',
+                    category: 'Human Resources',
+                    location: 'Lagos'
+                })
+                .end((err, res) => {
+                    res.should.have.status(201);
+                    res.body.should.be.a('object');
+                    assert.isString(
+                        res.body.message,
+                        'Business created'
+                    );
+                    done();
+                });
+        });
+    });
 });
