@@ -6,7 +6,7 @@ import {
     deleteBusiness,
     updateBusiness
 } from '../controllers/businessesController';
-import createReview from '../controllers/reviewsController'
+import createReview from '../controllers/reviewsController';
 
 const router = express.Router();
 
