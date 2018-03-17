@@ -6,6 +6,7 @@ import {
     deleteBusiness,
     updateBusiness
 } from '../controllers/businessesController';
+import createReview from '../controllers/reviewsController'
 
 const router = express.Router();
 
@@ -17,6 +18,9 @@ router.get('/:businessId', businessDetails);
 
 // Create a business
 router.post('/', createBusiness);
+
+// Create a review
+router.post('/:businessId/reviews', createReview);
 
 // PUT details of a business
 router.put('/:businessId', updateBusiness);
