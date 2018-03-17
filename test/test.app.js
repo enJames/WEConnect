@@ -82,4 +82,24 @@ describe('Test for businesses', () => {
                 });
         });
     });
+
+    describe('when the user sends an UPDATE request to /api/v1/businesses/:businessId', () => {
+        it('It should return a 200 status and retrieve deleted business with id of 2', (done) => {
+            chai.request(app)
+                .put('/api/v1/businesses/2')
+                .send({
+                    company: 'Fife consult'
+                })
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    res.body.business.should.be.a('object');
+                    assert.isString(
+                        res.body.message,
+                        'Business deleted'
+                    );
+                    done();
+                });
+        });
+    });
 });
