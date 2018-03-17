@@ -102,4 +102,39 @@ describe('Test for businesses', () => {
                 });
         });
     });
+
+    describe('when the user sends a DELETE request to /api/v1/businesses/:businessId', () => {
+        it('It should return a 200 status and retrieve deleted business with id of 1', (done) => {
+            chai.request(app)
+                .delete('/api/v1/businesses/1')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    res.body.business.should.be.a('object');
+                    assert.equal(
+                        res.body.message,
+                        'Business deleted'
+                    );
+                    done();
+                });
+        });
+
+        it('It should return a 404 status when req.params is 40', (done) => {
+            chai.request(app)
+                .delete('/api/v1/businesses/40')
+                .end((err, res) => {
+                    res.should.have.status(404);
+                    res.body.should.be.a('object');
+                    assert.isUndefined(
+                        res.body.business,
+                        'business does not exist'
+                    );
+                    assert.isString(
+                        res.body.message,
+                        'Business not found'
+                    );
+                    done();
+                });
+        });
+    });
 });
