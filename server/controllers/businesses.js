@@ -67,6 +67,25 @@ const updateBusiness = (req, res) => {
     });
 };
 
+// Handle delete business on DELETE
+const deleteBusiness = (req, res) => {
+    let theBusiness;
+    businesses.forEach((business, index) => {
+        if (parseInt(req.params.businessId, 10) === business.id) {
+            theBusiness = business;
+            businesses.splice(index, 1);
+        }
+    });
+    if (theBusiness) {
+        return res.status(200).json({
+            message: 'Business deleted',
+            business: theBusiness
+        });
+    }
+    return res.status(404).json({
+        message: 'Business not found'
+    });
+};
 
 // exporting
 export {
