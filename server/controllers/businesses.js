@@ -25,6 +25,21 @@ const businessDetails = (req, res) => {
     });
 };
 
+// Register/create a business on POST
+const createBusiness = (req, res) => {
+    const { company, category, location } = req.body;
+    const business = {
+        id: (businesses.length + 1),
+        company,
+        category,
+        location
+    };
+    businesses.push(business);
+    return res.status(201).json({
+        message: 'Business created',
+        business
+    });
+};
 
 // exporting
 export {
