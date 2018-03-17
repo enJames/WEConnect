@@ -101,6 +101,20 @@ describe('Test for businesses', () => {
                     done();
                 });
         });
+        it('It should return a 404 status if business does not exist', (done) => {
+            chai.request(app)
+                .put('/api/v1/businesses/35')
+                .send({
+                    company: 'Majid consult'
+                })
+                .end((err, res) => {
+                    assert.equal(
+                        res.body.message,
+                        'Business not found'
+                    );
+                    done();
+                });
+        });
     });
 
     describe('when the user sends a DELETE request to /api/v1/businesses/:businessId', () => {
@@ -247,7 +261,7 @@ describe('Test for filter', () => {
                 });
         });
 
-        it('It should return an object', (done) => {
+        it('It should return an array', (done) => {
             chai.request(app)
                 .get('/api/v1/businesses?location=Lagos')
                 .end((err, res) => {
@@ -260,7 +274,7 @@ describe('Test for filter', () => {
             chai.request(app)
                 .get('/api/v1/businesses?location=Lagos')
                 .end((err, res) => {
-                    assert.isAtLeast(res.body.result.lenth, 1);
+                    assert.isAtLeast(res.body.result.length, 1);
                     done();
                 });
         });
