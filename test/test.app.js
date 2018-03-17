@@ -155,9 +155,50 @@ describe('Test for business reviews', () => {
                 .end((err, res) => {
                     res.should.have.status(201);
                     res.body.should.be.a('object');
-                    assert.isString(
+                    assert.equal(
                         res.body.message,
-                        'Business created'
+                        'Review created'
+                    );
+                    done();
+                });
+        });
+    });
+
+    describe('when the user sends a POST request to /api/v1/businesses/:businessId/reviews and the business does not exist', () => {
+        it('It should return a 404 status', (done) => {
+            let theBusinessId;
+            chai.request(app)
+                .post('/api/v1/businesses/50/reviews', (req) => {
+                    theBusinessId = req.params.businessId;
+                })
+                .send({
+                    businessId: theBusinessId,
+                    reviewer: 'Mary Akuluna',
+                    reviewText: 'I would do business with them over and over again'
+                })
+                .end((err, res) => {
+                    res.should.have.status(404);
+                    res.body.should.be.a('object');
+                    assert.equal(
+                        res.body.message,
+                        'Business does not exist'
+                    );
+                    done();
+                });
+        });
+    });
+
+    describe('when the user sends a GET request to /api/v1/businesses/:businessId/reviews', () => {
+        it('It should return a 200 status and create a new review for the business', (done) => {
+            let allReviews;
+            chai.request(app)
+                .get('/api/v1/businesses/1/reviews')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    assert.equal(
+                        res.body.message,
+                        `Found ${allReviews} created`
                     );
                     done();
                 });
