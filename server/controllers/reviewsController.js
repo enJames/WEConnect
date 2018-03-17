@@ -1,23 +1,15 @@
 import reviews from '../models/reviewsData';
-import businesses from '../models/businessData'
+import businesses from '../models/businessData';
 
 const createReview = (req, res) => {
-    const { businessId, reviewer, reviewText } = req.body;
-    const review = {
-        businessId,
-        reviewer,
-        reviewText
-    };
-
-    let theBusiness;
+    let review;
 
     businesses.forEach((business) => {
-        if (business.id === req.params.businessId) {
-            theBusiness = business;
+        if (business.id === parseInt(req.params.businessId, 10)) {
+            review = req.body;
         }
     });
-    if (theBusiness) {
-        reviews.push(review);
+    if (review) {
         return res.status(201).json({
             message: 'Review created',
             review
@@ -28,4 +20,21 @@ const createReview = (req, res) => {
     });
 };
 
-export default createReview;
+const getBusinessReviews = (req, res) => {
+    const allBusinessReviews = [];
+
+    reviews.forEach((review) => {
+        if (review.businessId === Number(req.params.businessId)) {
+            allBusinessReviews.push(review);
+        }
+    });
+    return res.status(200).json({
+        message: `Found ${allBusinessReviews.length} reviews`,
+        allBusinessReviews
+    });
+};
+
+export {
+    createReview,
+    getBusinessReviews
+};

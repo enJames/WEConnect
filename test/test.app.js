@@ -142,16 +142,15 @@ describe('Test for businesses', () => {
 describe('Test for business reviews', () => {
     describe('when the user sends a POST request to /api/v1/businesses/:businessId/reviews', () => {
         it('It should return a 201 status and create a new review for the business', (done) => {
-            let theBusinessId;
+            const theReview = {
+                businessId: 2,
+                reviewer: 'Mary Akuluna',
+                reviewText: 'I would do business with them over and over again'
+            };
+
             chai.request(app)
-                .post('/api/v1/businesses/1/reviews', (req) => {
-                    theBusinessId = req.params.businessId;
-                })
-                .send({
-                    businessId: theBusinessId,
-                    reviewer: 'Mary Akuluna',
-                    reviewText: 'I would do business with them over and over again'
-                })
+                .post('/api/v1/businesses/2/reviews')
+                .send(theReview)
                 .end((err, res) => {
                     res.should.have.status(201);
                     res.body.should.be.a('object');
@@ -166,13 +165,13 @@ describe('Test for business reviews', () => {
 
     describe('when the user sends a POST request to /api/v1/businesses/:businessId/reviews and the business does not exist', () => {
         it('It should return a 404 status', (done) => {
-            let theBusinessId;
+            let theBusinessIdNotFound;
             chai.request(app)
                 .post('/api/v1/businesses/50/reviews', (req) => {
-                    theBusinessId = req.params.businessId;
+                    theBusinessIdNotFound = req.params.businessId;
                 })
                 .send({
-                    businessId: theBusinessId,
+                    businessId: theBusinessIdNotFound,
                     reviewer: 'Mary Akuluna',
                     reviewText: 'I would do business with them over and over again'
                 })
@@ -188,17 +187,48 @@ describe('Test for business reviews', () => {
         });
     });
 
-    describe('when the user sends a GET request to /api/v1/businesses/:businessId/reviews', () => {
-        it('It should return a 200 status and create a new review for the business', (done) => {
-            let allReviews;
+    describe('When the user sends a GET request to /api/v1/businesses/:businessId/reviews', () => {
+        it('It should return a 200 status', (done) => {
             chai.request(app)
-                .get('/api/v1/businesses/1/reviews')
+                .get('/api/v1/businesses/2/reviews')
                 .end((err, res) => {
                     res.should.have.status(200);
+                    done();
+                });
+        });
+
+        it('It should return an object', (done) => {
+            chai.request(app)
+                .get('/api/v1/businesses/2/reviews')
+                .end((err, res) => {
                     res.body.should.be.a('object');
+                    done();
+                });
+        });
+
+        it('It should state that businesses were found', (done) => {
+            chai.request(app)
+                .get('/api/v1/businesses/2/reviews')
+                .end((err, res) => {
                     assert.equal(
                         res.body.message,
-                        `Found ${allReviews} created`
+                        `Found ${res.body.allBusinessReviews.length} reviews`
+                    );
+                    assert.isAtLeast(
+                        parseInt(res.body.allBusinessReviews.length, 10),
+                        1
+                    );
+                    done();
+                });
+        });
+
+        it('It should find atleast 1 business', (done) => {
+            chai.request(app)
+                .get('/api/v1/businesses/2/reviews')
+                .end((err, res) => {
+                    assert.isAtLeast(
+                        parseInt(res.body.allBusinessReviews.length, 10),
+                        1
                     );
                     done();
                 });
