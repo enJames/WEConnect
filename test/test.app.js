@@ -138,3 +138,26 @@ describe('Test for businesses', () => {
         });
     });
 });
+
+describe('Test for business reviews', () => {
+    describe('when the user sends a POST request to /api/v1/businesses/:businessId/reviews', () => {
+        it('It should return a 201 status and create a new review for the business', (done) => {
+            chai.request(app)
+                .post('/api/v1/businesses/1/reviews')
+                .send(req => ({
+                    businessId: req.params.businessId,
+                    reviewer: 'Mary Akuluna',
+                    reviewText: 'I would do business with them over and over again'
+                }))
+                .end((err, res) => {
+                    res.should.have.status(201);
+                    res.body.should.be.a('object');
+                    assert.isString(
+                        res.body.message,
+                        'Business created'
+                    );
+                    done();
+                });
+        });
+    });
+});
