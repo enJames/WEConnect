@@ -235,3 +235,42 @@ describe('Test for business reviews', () => {
         });
     });
 });
+
+describe('Test for filter', () => {
+    describe('When user sends a GET filter request to /api/v1/businesses?location=<location>', () => {
+        it('It should return a 200 status code', (done) => {
+            chai.request(app)
+                .get('/api/v1/businesses?location=Lagos')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
+
+        it('It should return an object', (done) => {
+            chai.request(app)
+                .get('/api/v1/businesses?location=Lagos')
+                .end((err, res) => {
+                    assert.isArray(res.body.result, 'Result is array');
+                    done();
+                });
+        });
+
+        it('It should return atleast 1 business if there are registered businesses in the search query location', (done) => {
+            chai.request(app)
+                .get('/api/v1/businesses?location=Lagos')
+                .end((err, res) => {
+                    assert.isAtLeast(res.body.result.lenth, 1);
+                    done();
+                });
+        });
+        it('It should return "No registered business in this location" if there are no registered businesses in the search query location', (done) => {
+            chai.request(app)
+                .get('/api/v1/businesses?location=Kafanchan')
+                .end((err, res) => {
+                    assert.equal(res.body.message, 'No registered business in this location');
+                    done();
+                });
+        });
+    });
+});
