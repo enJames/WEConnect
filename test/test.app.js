@@ -10,7 +10,7 @@ describe('Test for businesses', () => {
     describe('when the user sends a GET request to /api/v1/businesses/', () => {
         it('It should return a 200 status and get all businesses', (done) => {
             chai.request(app)
-                .get('/api/v1/businesses')
+                .get('/api/v1/businesses/')
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a('object');
@@ -250,8 +250,8 @@ describe('Test for business reviews', () => {
     });
 });
 
-describe('Test for filter', () => {
-    describe('When user sends a GET filter request to /api/v1/businesses?location=<location>', () => {
+describe('Test for filter feature', () => {
+    describe('Location Filter: When user sends a GET filter request to /api/v1/businesses?location=<location>', () => {
         it('It should return a 200 status code', (done) => {
             chai.request(app)
                 .get('/api/v1/businesses?location=Lagos')
@@ -282,7 +282,44 @@ describe('Test for filter', () => {
             chai.request(app)
                 .get('/api/v1/businesses?location=Kafanchan')
                 .end((err, res) => {
-                    assert.equal(res.body.message, 'No registered business in this location');
+                    assert.equal(res.body.message, 'No registered business in the location "Kafanchan"');
+                    done();
+                });
+        });
+    });
+
+    describe('Category Filter: When user sends a GET filter request to /api/v1/businesses?category=<category>', () => {
+        it('It should return a 200 status code', (done) => {
+            chai.request(app)
+                .get('/api/v1/businesses?category=Hospitality')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
+
+        it('It should return an array', (done) => {
+            chai.request(app)
+                .get('/api/v1/businesses?category=Hospitality')
+                .end((err, res) => {
+                    assert.isArray(res.body.result, 'Result is array');
+                    done();
+                });
+        });
+
+        it('It should return atleast 1 business if there are registered businesses in the search query category', (done) => {
+            chai.request(app)
+                .get('/api/v1/businesses?category=Hospitality')
+                .end((err, res) => {
+                    assert.isAtLeast(res.body.result.length, 1);
+                    done();
+                });
+        });
+        it('It should return "No registered business in the category <category>" if there are no registered businesses in the search query category', (done) => {
+            chai.request(app)
+                .get('/api/v1/businesses?category=Entertainment')
+                .end((err, res) => {
+                    assert.equal(res.body.message, 'No registered business in the category "Entertainment"');
                     done();
                 });
         });
