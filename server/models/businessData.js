@@ -10,7 +10,7 @@ const businesses = [
         company: 'Another Company Nigeria Limited',
         category: 'Human Resources',
         location: 'Benue'
-    }
+    },
     {
         id: 3,
         company: 'Fila-main Limited',
