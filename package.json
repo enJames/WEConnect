@@ -6,8 +6,7 @@
   "scripts": {
     "start": "babel-node server/app.js",
     "test": "nyc mocha --exit --compilers js:babel-core/register",
-    "coverage": "babel-node istanbul cover _mocha",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
