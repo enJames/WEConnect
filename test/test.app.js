@@ -327,7 +327,7 @@ describe('Test for filter feature', () => {
 });
 
 describe('Test for Users feature', () => {
-    describe('User Sign Up: When user sends a POST request to /api/v1/auth/signup', () => {
+    describe('User Sign Up: When user sends a POST signup request to /api/v1/auth/signup', () => {
         it('It should return a 201 status if NO details entered already exists', (done) => {
             chai.request(app)
                 .post('/api/v1/auth/signup')
@@ -377,6 +377,56 @@ describe('Test for Users feature', () => {
                 })
                 .end((err, res) => {
                     assert.equal(res.body.message, 'Registration successful!');
+                    done();
+                });
+        });
+    });
+    describe('User Login: When user sends a POST login request to /api/v1/auth/signup', () => {
+        it('It should return a 200 status if users credentials match any registered user', (done) => {
+            chai.request(app)
+                .post('/api/v1/auth/login')
+                .send({
+                    email: 'mailing@email.com',
+                    password: 'user5678'
+                })
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
+        it('It should return a 404 status if credentials DO NOT match any registered user', (done) => {
+            chai.request(app)
+                .post('/api/v1/auth/login')
+                .send({
+                    email: 'mailing@email.com',
+                    password: 'usee5678'
+                })
+                .end((err, res) => {
+                    res.should.have.status(404);
+                    done();
+                });
+        });
+        it('It should return an object', (done) => {
+            chai.request(app)
+                .post('/api/v1/auth/login')
+                .send({
+                    email: 'mailing@email.com',
+                    password: 'user5678'
+                })
+                .end((err, res) => {
+                    assert.isObject(res.body, 'Is Obejct');
+                    done();
+                });
+        });
+        it('It should return a success message of "Login successful!"', (done) => {
+            chai.request(app)
+                .post('/api/v1/auth/login')
+                .send({
+                    email: 'mailing@email.com',
+                    password: 'user5678'
+                })
+                .end((err, res) => {
+                    assert.equal(res.body.message, 'Login successful!');
                     done();
                 });
         });
