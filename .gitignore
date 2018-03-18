@@ -3,4 +3,3 @@ dist/
 .coveralls.yml
 coverage/
 template/scss/
-.nyc_output/
