@@ -11,6 +11,18 @@ const businesses = [
         category: 'Human Resources',
         location: 'Benue'
     }
+    {
+        id: 3,
+        company: 'Fila-main Limited',
+        category: 'Hospitality',
+        location: 'Lagos'
+    },
+    {
+        id: 4,
+        company: 'Andrealit',
+        category: 'Hospitality',
+        location: 'Benue'
+    }
 ];
 
 export default businesses;
