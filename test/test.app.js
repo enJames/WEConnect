@@ -326,24 +326,24 @@ describe('Test for filter feature', () => {
     });
 });
 
-describe('Test for users', () => {
-    describe('Test for User sign up', () => {
+describe('Test for Users feature', () => {
+    describe('User Sign Up: When user sends a POST request to /api/v1/auth/signup', () => {
         it('It should return a 201 status if NO details entered already exists', (done) => {
             chai.request(app)
-                .post('api/v1/auth/signup')
+                .post('/api/v1/auth/signup')
                 .send({
                     firstname: 'Muskule',
                     lastname: 'Damalin',
                     email: 'new@new.com'
                 })
                 .end((err, res) => {
-                    res.should.have.status(200);
+                    res.should.have.status(201);
                     done();
                 });
         });
         it('It should return a 400 status if atleast 1 detail already exist', (done) => {
             chai.request(app)
-                .post('api/v1/auth/signup')
+                .post('/api/v1/auth/signup')
                 .send({
                     firstname: 'Muskule',
                     lastname: 'Damalin',
@@ -356,7 +356,7 @@ describe('Test for users', () => {
         });
         it('It should return an object', (done) => {
             chai.request(app)
-                .post('api/v1/auth/signup')
+                .post('/api/v1/auth/signup')
                 .send({
                     firstname: 'Muskule',
                     lastname: 'Damalin',
@@ -369,7 +369,7 @@ describe('Test for users', () => {
         });
         it('It should return a success message of "Registration successful!"', (done) => {
             chai.request(app)
-                .post('api/v1/auth/signup')
+                .post('/api/v1/auth/signup')
                 .send({
                     firstname: 'Muskule',
                     lastname: 'Damalin',
