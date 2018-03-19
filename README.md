@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/enJames/WEConnect.svg?branch=develop)](https://travis-ci.org/enJames/WEConnect)
-[![Coverage Status](https://coveralls.io/repos/github/enJames/WEConnect/badge.svg?branch=master)](https://coveralls.io/github/enJames/WEConnect?branch=master)
+[![Build Status](https://travis-ci.org/enJames/WEConnect.svg)](https://travis-ci.org/enJames/WEConnect)
+[![Coverage Status](https://coveralls.io/repos/github/enJames/WEConnect/badge.svg)](https://coveralls.io/github/enJames/WEConnect)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/633507769038bd0e3ba0/test_coverage)](https://codeclimate.com/github/enJames/WEConnect/test_coverage)
 
 FORMAT: 1A
