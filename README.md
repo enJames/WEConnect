@@ -2,11 +2,23 @@
 [![Coverage Status](https://coveralls.io/repos/github/enJames/WEConnect/badge.svg?branch=master)](https://coveralls.io/github/enJames/WEConnect?branch=master)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/633507769038bd0e3ba0/test_coverage)](https://codeclimate.com/github/enJames/WEConnect/test_coverage)
 
-# About WeConnect
+FORMAT: 1A
+
+# WEConnect
 WeConnect provides a platform that brings businesses and individuals together. This platform creates awareness for businesses and gives the users the ability to write reviews about the businesses they have interacted with.
 
 # Live Template View
 https://enjames.github.io/WEConnect/template/pages
+
+# Group WEConnect Businesses
+
+Resources related to businesses in the API.
+
+## Action on WEConnect Collection [api/v1/businesses]
+
+### List All Businesses [GET]
++ Response 200 (application/json)
+
 
 <h3>API ENDPOINTS</h3>
 <hr>
