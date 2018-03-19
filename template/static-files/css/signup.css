@@ -1,9 +1,13 @@
 body {
-  background-color: #EEEEEE; }
+  background-color: #EEEEEE;
+}
 
 @media screen and (max-width: 767px) {
-  ul {
-    display: none !important; }
-  form {
-    max-width: 310px !important;
-    margin: 15px auto !important; } }
+    ul {
+        display: none !important;
+    }
+    form {
+        max-width: 310px !important;
+        margin: 15px auto !important;
+    }
+}
