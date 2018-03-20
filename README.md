@@ -1,25 +1,19 @@
 [![Build Status](https://travis-ci.org/enJames/WEConnect.svg)](https://travis-ci.org/enJames/WEConnect)
-[![Coverage Status](https://coveralls.io/repos/github/enJames/WEConnect/badge.svg)](https://coveralls.io/github/enJames/WEConnect)
+[![Coverage Status](https://coveralls.io/repos/github/enJames/WEConnect/badge.svg?branch=develop)](https://coveralls.io/github/enJames/WEConnect?branch=develop)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/633507769038bd0e3ba0/test_coverage)](https://codeclimate.com/github/enJames/WEConnect/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
-
-FORMAT: 1A
+[![Maintainability](https://api.codeclimate.com/v1/badges/633507769038bd0e3ba0/maintainability)](https://codeclimate.com/github/enJames/WEConnect/maintainability)
 
 # WEConnect
 WeConnect provides a platform that brings businesses and individuals together. This platform creates awareness for businesses and gives the users the ability to write reviews about the businesses they have interacted with.
 
-# Live Template View
+#### Live Template View
 https://enjames.github.io/WEConnect/template/pages
 
-# Group WEConnect Businesses
+## WEConnect Businesses
 
 Resources related to businesses in the API.
 
-## Action on WEConnect Collection [api/v1/businesses]
-
-### List All Businesses [GET]
-+ Response 200 (application/json)
-
+## Action on WEConnect
 
 <h3>API ENDPOINTS</h3>
 <hr>
