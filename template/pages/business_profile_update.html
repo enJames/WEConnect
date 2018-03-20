@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WEConnect</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" href="/img/logo.png">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../static-files/css/animate.css">
+    	<link rel="stylesheet" type="text/css" href="../static-files/css/master.css">
+    	<link rel="stylesheet" type="text/css" href="../static-files/css/business_profile_update.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-toggleable-sm navbar-light bg-faded custom-color">
+            <button class="navbar-toggler navbar-toggler-right menu-button" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon white-font"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <img src="../static-files/img/logo.png" width="150" height="80" alt="logo">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="form-inline mx-auto">
+                    <input class="form-control mr-sm-2" id="navSearchBusiness" type="text" placeholder="Search a business">
+                    <input class="form-control mr-sm-1" id="navSearchLocation" type="text" placeholder="Location">
+                    <button class="nav-wc-btn" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLinkBusinesses" href="#"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Businesses
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkUser">
+                            <a class="dropdown-item" href="business_profile.html">Some Company</a>
+                            <a class="dropdown-item" href="#">WEConnect</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="user form-inline dropdown text-center marginRight">
+                    <a class="dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLinkUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="avatarDiv form-inline mx-auto">
+                            <div class="avatar">
+                                <img class="img-fluid" src="../static-files/img/user/steve.png" alt="user">
+                            </div>
+                        </div>
+                        <div class="username form-inline mx-auto">
+                            <span>Steve</span>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkUser">
+                      <a class="dropdown-item" href="#">Profile</a>
+                      <a class="dropdown-item" href="#">Settings</a>
+                      <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="description">
+                <h1>Lorem and Lorem</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Get your business noticed, get your business registered.</p>
+            </div>
+            <form class="my-form" method="POST text-center">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="businessName">Business Name</label>
+                            <input class="form-control" type="text" id="businessName" placeholder="e.g Some Company" value="Some Company">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="category">Business Category</label>
+                            <select class="form-control" id="category">
+                                <option disabled hidden class="select-opt">--Select--</option>
+                                <option>Agriculture & Forestry/Wildlife</option>
+                                <option>Business & Information</option>
+                                <option>Construction/Utilities/Contracting</option>
+                                <option>Education</option>
+                                <option selected>Finance & Insurance</option>
+                                <option>Food & Hospitality</option>
+                                <option>Gaming</option>
+                                <option>Health Services</option>
+                                <option>Motor Vehicle</option>
+                                <option>Natural Resources/Environmental</option>
+                                <option>Personal Services</option>
+                                <option>Real Estate & Housing</option>
+                                <option>Safety/Security & Legal</option>
+                                <option>Transportation</option>
+                                <option>Others</option>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="email">Email</label>
+                            <input class="form-control" type="email" id="email" placeholder="e.g mail@example.com" value="mail@example.com">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="website">Website</label>
+                            <input class="form-control" type="url" id="website" placeholder="e.g www.example.com" value="www.example.com">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="address_1">Address Line 1</label>
+                            <input class="form-control" type="text" id="address_1" placeholder="e.g Plot 207a Zuma Street" value="Plot 1692, Wickson Street">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="address_2">Address Line 2</label>
+                            <input class="form-control" type="text" id="address_2" placeholder="e.g Opposite Federal Secretariat" value="Opposite old barracks">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="city">City</label>
+                            <input class="form-control" type="text" id="city" placeholder="e.g Victoria Island" value="Iponri">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="state">State</label>
+                            <input class="form-control" type="text" id="state" placeholder="e.g Lagos" value="Lagos">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="country">Country</label>
+                            <input class="form-control" type="text" id="country" placeholder="e.g Nigeria" value="Nigeria">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center button-div">
+                    <button type="submit" name="submit" class="wc-btn">Save</button>
+                </div>
+            </form>
+        </div>
+        <footer>
+            <div class="container-fluid">
+                <div class="footer-wrapper form-inline">
+                    <div class="content-els row">
+                        <div class="col-sm-3">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                        <div class="col-sm-2">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                        </div>
+                        <div class="col-sm-3">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="subscribe ml-auto">
+                                <h6>Let's keep you updated!</h6>
+                                <form class="form-inline mx-auto">
+                                    <input class="form-control mr-sm-2" type="email" id="footer-email"placeholder="E-mail address">
+                                    <button class="nav-wc-btn" type="submit">Save</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </body>
+</html>
