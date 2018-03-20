@@ -11,5 +11,10 @@ env:
 cache:
   directories:
     - "node_modules"
+addons:
+    code_climate:
+        repo_token: a6ee0a292f12e5ac6fad4fa34b9a564a2e9ac817c3c10c503ec03abf1c3c8770
 after_success :
     - npm run coverage
+after_script:
+  - codeclimate-test-reporter < ./coverage/lcov.info
