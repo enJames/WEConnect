@@ -1,24 +1,12 @@
 [![Build Status](https://travis-ci.org/enJames/WEConnect.svg)](https://travis-ci.org/enJames/WEConnect)
-[![Coverage Status](https://coveralls.io/repos/github/enJames/WEConnect/badge.svg?branch=ft-user_login-156072448)](https://coveralls.io/github/enJames/WEConnect?branch=ch-Documentation-156080359)
+[![Coverage Status](https://coveralls.io/repos/github/enJames/WEConnect/badge.svg)](https://coveralls.io/github/enJames/WEConnect)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/633507769038bd0e3ba0/test_coverage)](https://codeclimate.com/github/enJames/WEConnect/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+
+FORMAT: 1A
 
 # WEConnect
-WEConnect provides a platform that brings businesses and individuals together. This platform creates awareness for businesses and gives the users the ability to write reviews about the businesses they have interacted with.
-
-### Application Description
-
-The platform allows two forms of users: authenticated and unauthenticated.
-
-##### Authenticated Users
-Authenticated users are users that signup and have user accounts. They can:
-+ Login and Logout
-+ Register/create a business
-+ Search, view and review a business
-
-##### Unauthenticated Users
-Unauthenticated users do not have user accounts. They can:
-+ Register/create a business
-+ Search, view and review a business
+WeConnect provides a platform that brings businesses and individuals together. This platform creates awareness for businesses and gives the users the ability to write reviews about the businesses they have interacted with.
 
 # Live Template View
 https://enjames.github.io/WEConnect/template/pages
@@ -33,7 +21,7 @@ Resources related to businesses in the API.
 + Response 200 (application/json)
 
 
-##API Endpoints
+<h3>API ENDPOINTS</h3>
 <hr>
 <table>
     <thead>
