@@ -42,6 +42,9 @@
     "chai-http": "^3.0.0",
     "cors": "^2.8.4",
     "express": "^4.16.2",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.37.3",
     "swagger-ui-express": "^2.0.15",
     "yamljs": "^0.3.0"
   }
