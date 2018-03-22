@@ -1,5 +1,5 @@
 import ConnectToDatabase from './connectToDatabase';
-import SendResponse from './SendResponse';
+import SendResponse from './sendResponse';
 
 const LoginUser = (res, email, password) => ConnectToDatabase.query(`SELECT * FROM users WHERE email='${email}'`)
     .then((data) => {
