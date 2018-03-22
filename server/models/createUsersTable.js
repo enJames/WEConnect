@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize';
-import ConnectToDatabase from '../connectToDatabase';
+import ConnectToDatabase from './connectToDatabase';
 
 const CreateUsersTable = ConnectToDatabase.define('users', {
     userName: {
