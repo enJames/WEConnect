@@ -1,34 +1,27 @@
 import express from 'express';
-import {
-    allBusinesses,
-    businessDetails,
-    createBusiness,
-    deleteBusiness,
-    updateBusiness
-} from '../controllers/businessesController';
-import { createReview, getBusinessReviews } from '../controllers/reviewsController';
+import RegisterBusinessController from '../controllers/registerBusinessController';
 
 const router = express.Router();
 
 // GET allBusinesses
-router.get('/', allBusinesses);
+router.get('/');
 
 // GET details of a business
-router.get('/:businessId', businessDetails);
+router.get('/:businessId');
 
 // GET reviews of a business
-router.get('/:businessId/reviews', getBusinessReviews);
+router.get('/:businessId/reviews');
 
 // Create a business
-router.post('/', createBusiness);
+router.post('/', RegisterBusinessController);
 
 // Create a review
-router.post('/:businessId/reviews', createReview);
+router.post('/:businessId/reviews');
 
 // PUT details of a business
-router.put('/:businessId', updateBusiness);
+router.put('/:businessId');
 
 // DELETE a business
-router.delete('/:businessId', deleteBusiness);
+router.delete('/:businessId');
 
 export default router;

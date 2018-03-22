@@ -1,26 +1,26 @@
 import Sequelize from 'sequelize';
-import connectToDatabase from '../connectToDatabase';
+import ConnectToDatabase from '../connectToDatabase';
 
-const createUsersTable = connectToDatabase.define('businesses', {
-    Username: {
+const CreateUsersTable = ConnectToDatabase.define('users', {
+    userName: {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true
     },
-    FirstName: {
+    firstName: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    LastName: {
+    lastName: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    EmailAddress: {
+    email: {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true
     },
-    Gender: {
+    gender: {
         type: Sequelize.STRING,
         allowNull: false
     },
@@ -32,4 +32,4 @@ const createUsersTable = connectToDatabase.define('businesses', {
     freezeTableName: true
 });
 
-export default createUsersTable;
+export default CreateUsersTable;

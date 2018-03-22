@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize';
-import connectToDatabase from '../connectToDatabase';
+import ConnectToDatabase from './connectToDatabase';
 
-const createBusinessesTable = connectToDatabase.define('businesses', {
+const CreateBusinessesTable = ConnectToDatabase.define('businesses', {
     BusinessId: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -47,4 +47,6 @@ const createBusinessesTable = connectToDatabase.define('businesses', {
     freezeTableName: true
 });
 
-export default createBusinessesTable;
+CreateBusinessesTable.sync();
+
+export default CreateBusinessesTable;

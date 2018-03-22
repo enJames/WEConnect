@@ -1,30 +1,11 @@
-import businesses from '../models/businessData';
-import {
-    filterBusinessesByLocation,
-    filterBusinessesByCategory
-} from './filterController';
+import retrieveBusinesses from '../models/businessDB/retrieveBusinesses';
 
-// Get list of all businesses
-const allBusinesses = (req, res) => {
-    if (req.query) {
-        if (req.query.location) {
-            return filterBusinessesByLocation(req, res);
-        }
-        if (req.query.category) {
-            return filterBusinessesByCategory(req, res);
-        }
-    }
-    return res.status(200).json({
-        message: 'All businesses',
-        businesses
-    });
-};
 
 // Get details of a business
 const businessDetails = (req, res) => {
     let theBusiness;
-    businesses.forEach((business) => {
-        if (parseInt(req.params.businessId, 10) === business.id) {
+    retrieveBusinesses.forEach((business) => {
+        if (parseInt(req.params.businessId, 10) === business.BusinessId) {
             theBusiness = business;
         }
     });
@@ -41,7 +22,24 @@ const businessDetails = (req, res) => {
 
 // Register/create a business on POST
 const createBusiness = (req, res) => {
-    const { company, category, location } = req.body;
+    const {
+        businessName,
+        category,
+        email,
+        website,
+        address_1,
+        address_2,
+        city,
+        state,
+        country
+    } = req.body;
+
+    if (businessName.trim() === '' || ) {
+
+    } else {
+
+    }
+
     const business = {
         id: (businesses.length),
         company,
