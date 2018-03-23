@@ -5,7 +5,7 @@ import FilterBusinessesByLocation from './filterBusinessesByLocation';
 
 // Get list of all businesses
 const GetAllBusinessesController = (req, res) => {
-    if (!req.query) {
+    if (Object.keys(req.query).length === 0) {
         ConnectToDatabase.query('SELECT * FROM businesses')
             .then(businessTableRows => SendResponse(
                 res,
