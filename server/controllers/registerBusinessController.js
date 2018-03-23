@@ -31,14 +31,14 @@ const RegisterBusinessController = (req, res) => {
     } else if (!country || (country === '')) {
         return SendResponse(res, 400, 'passwords do not match');
     }
+    const address = `${address1}, ${address2}`;
     return RegisterBusiness(
         res,
         businessName,
         category,
         email,
         website,
-        address1,
-        address2,
+        address,
         city,
         state,
         country

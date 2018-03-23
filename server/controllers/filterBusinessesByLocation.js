@@ -1,23 +1,16 @@
-import RetrieveBusinesses from '.../models/businessDB/retrieveBusinesses.j';
+import ConnectToDatabase from '../models/connectToDatabase';
+import SendResponse from '../models/sendResponse';
 
 const FilterBusinessesByLocation = (req, res) => {
     const queryBusinessLocation = req.query.location;
-    const result = [];
-    RetrieveBusinesses.forEach((business) => {
-        if (queryBusinessLocation === business.location) {
-            result.push(business);
-        }
-    });
-
-    if (result.length > 0) {
-        return res.status(200).json({
-            message: `Found ${result.lenth} businesses in ${queryBusinessLocation}`,
-            result
-        });
-    }
-    return res.status(404).json({
-        message: `No registered business in the location "${queryBusinessLocation}"`
-    });
+    ConnectToDatabase.query(`SELECT * FROM businesses WHERE state='${queryBusinessLocation}'`)
+        .then(businessTableRows => SendResponse(
+            res,
+            200,
+            `Found ${businessTableRows[0].length} in ${queryBusinessLocation}.`,
+            businessTableRows[0]
+        ))
+        .catch(() => SendResponse(res, 500, 'There was an error fectching businesses'));
 };
 
 export default FilterBusinessesByLocation;

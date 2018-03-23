@@ -1,22 +1,16 @@
-import RetrieveBusinesses from '../models/businessDB/retrieveBusinesses';
+import ConnectToDatabase from '../models/connectToDatabase';
+import SendResponse from '../models/sendResponse';
 
 const FilterBusinessesByCategory = (req, res) => {
     const queryBusinessCategory = req.query.category;
-    const result = [];
-    RetrieveBusinesses.forEach((business) => {
-        if (queryBusinessCategory === business.Category) {
-            result.push(business);
-        }
-    });
-    if (result.length > 0) {
-        return res.status(200).json({
-            message: `Found ${result.lenth} businesses in ${queryBusinessCategory}`,
-            result
-        });
-    }
-    return res.status(404).json({
-        message: `No registered business in the category "${queryBusinessCategory}"`
-    });
+    ConnectToDatabase.query(`SELECT * FROM businesses WHERE category='${queryBusinessCategory}'`)
+        .then(businessTableRows => SendResponse(
+            res,
+            200,
+            `Found ${businessTableRows[0].length} in ${queryBusinessCategory}.`,
+            businessTableRows[0]
+        ))
+        .catch(() => SendResponse(res, 500, 'There was an error fectching businesses'));
 };
 
 export default FilterBusinessesByCategory;
