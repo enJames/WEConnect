@@ -1,34 +1,33 @@
 import express from 'express';
-import {
-    allBusinesses,
-    businessDetails,
-    createBusiness,
-    deleteBusiness,
-    updateBusiness
-} from '../controllers/businessesController';
-import { createReview, getBusinessReviews } from '../controllers/reviewsController';
+import GetAllBusinessesController from '../controllers/getAllBusinessesController';
+import GetABusinessController from '../controllers/getABusinessController';
+import RegisterBusinessController from '../controllers/registerBusinessController';
+import UpdateABusinesController from '../controllers/updateABusinessController';
+import DeleteABusinessController from '../controllers/deleteABusinessController';
+import AddAReviewController from '../controllers/addAReviewController';
+import GetAllBusinessReviewsController from '../controllers/getAllBusinessReviewsController';
 
 const router = express.Router();
 
 // GET allBusinesses
-router.get('/', allBusinesses);
+router.get('/', GetAllBusinessesController);
 
 // GET details of a business
-router.get('/:businessId', businessDetails);
+router.get('/:businessId', GetABusinessController);
 
 // GET reviews of a business
-router.get('/:businessId/reviews', getBusinessReviews);
+router.get('/:businessId/reviews', GetAllBusinessReviewsController);
 
 // Create a business
-router.post('/', createBusiness);
+router.post('/', RegisterBusinessController);
 
 // Create a review
-router.post('/:businessId/reviews', createReview);
+router.post('/:businessId/reviews', AddAReviewController);
 
 // PUT details of a business
-router.put('/:businessId', updateBusiness);
+router.put('/:businessId', UpdateABusinesController);
 
 // DELETE a business
-router.delete('/:businessId', deleteBusiness);
+router.delete('/:businessId', DeleteABusinessController);
 
 export default router;
