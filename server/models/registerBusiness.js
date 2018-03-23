@@ -3,30 +3,28 @@ import SendResponse from './sendResponse';
 
 const RegisterBusiness = (
     res,
-    businessName,
+    business_name,
     category,
     email,
     website,
-    address1,
-    address2,
+    address,
     city,
     state,
     country
 ) => {
-    CreateBusinessesTable.sync()
-        .create({
-            businessName,
-            category,
-            email,
-            website,
-            address1,
-            address2,
-            city,
-            state,
-            country
-        })
+    CreateBusinessesTable.sync();
+    CreateBusinessesTable.create({
+        business_name,
+        category,
+        email,
+        website,
+        address,
+        city,
+        state,
+        country
+    })
         .then(() => SendResponse(res, 200, 'Registration successful!'))
-        .catch(() => SendResponse(res, 500, 'There was a problem'));
+        .catch(error => SendResponse(res, 500, 'There was a problem', error));
 };
 
 export default RegisterBusiness;

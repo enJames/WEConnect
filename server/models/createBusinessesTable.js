@@ -2,44 +2,44 @@ import Sequelize from 'sequelize';
 import ConnectToDatabase from './connectToDatabase';
 
 const CreateBusinessesTable = ConnectToDatabase.define('businesses', {
-    BusinessId: {
+    business_id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    BusinessName: {
+    business_name: {
         type: Sequelize.STRING,
         unique: true,
         allowNull: false
     },
-    Category: {
+    category: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    EmailAddress: {
-        type: Sequelize.STRING,
-        unique: true,
-        allowNull: false
-    },
-    Website: {
+    email: {
         type: Sequelize.STRING,
         unique: true,
         allowNull: false
     },
-    Address: {
+    website: {
+        type: Sequelize.STRING,
+        unique: true,
+        allowNull: false
+    },
+    address: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    City: {
+    city: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    State: {
+    state: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    Country: {
+    country: {
         type: Sequelize.STRING,
         allowNull: false
     }

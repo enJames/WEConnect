@@ -1,50 +1,31 @@
 import Sequelize from 'sequelize';
-import connectToDatabase from '../connectToDatabase';
+import ConnectToDatabase from './connectToDatabase';
 
-const createBusinessesTable = connectToDatabase.define('businesses', {
-    BusinessId: {
+const CreateReviewsTable = ConnectToDatabase.define('reviews', {
+    review_id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    BusinessName: {
-        type: Sequelize.STRING,
-        unique: true,
-        allowNull: false
-    },
-    Category: {
+    reviewer: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    EmailAddress: {
+    email: {
         type: Sequelize.STRING,
-        unique: true,
+        allowNull: true
+    },
+    rating: {
+        type: Sequelize.INTEGER,
         allowNull: false
     },
-    Website: {
-        type: Sequelize.STRING,
-        unique: true,
-        allowNull: false
-    },
-    Address: {
+    review: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    City: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    State: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    Country: {
-        type: Sequelize.STRING,
-        allowNull: false
-    }
 }, {
     freezeTableName: true
 });
 
-export default createBusinessesTable;
+export default CreateReviewsTable;
